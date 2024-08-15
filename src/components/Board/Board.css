@@ -1,0 +1,40 @@
+.boardWrap{
+    border: solid;
+    border-color: black;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-flow : row wrap;
+}
+
+.boardSquare{
+    border: 1px solid blue;
+    width: 48px;
+    height: 48px;
+}
+
+
+.boardButton{
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color:rgba(0,0,0,0);
+}   
+
+.buttonWrap{
+    text-align: center;
+    border: 3px solid black;
+    width: 500px;
+    height: 100px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.gameButton{
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    margin: 30px 10px 10px 10px;
+    align-items: center;
+}
