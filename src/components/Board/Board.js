@@ -1,41 +1,40 @@
 import './Board.css'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
-function Board(){ 
-    const [dollBLocation, setDollBLocation] = useState([])
-    const [dollWLocation, setDollWLocation] = useState([])
-    const turnCount = useRef(0)
+function Board(props){ 
     const boardSquare = []
+    const stoneBLocation = props.stoneBLocation[0]
+    const stoneWLocation = props.stoneWLocation[0]
 
     function onClickBoardButton(i){
-        if(turnCount.current%2 == 0){
-            setDollBLocation(dollBLocation => [...dollBLocation, i])
+        if(props.turnCount[0]%2 === 0){
+            props.stoneBLocation[1](stoneBLocation => [...stoneBLocation, i])
         }
         else{
-            setDollWLocation(dollWLocation => [...dollWLocation, i])
+            props.stoneWLocation[1](stoneWLocation => [...stoneWLocation,i])
         }
-        turnCount.current = turnCount.current + 1
+        props.turnCount[1](props.turnCount[0] + 1)
         return 
     }
  
-    function makeBoardSquare(){       
+    function makeBoardSquare(){      
         for(let i=0;i<100;i++){ 
-            if(dollBLocation.includes(i)){
+            if(stoneBLocation.includes(i)){
                 boardSquare.push(
                     <div className='boardSquare'>
-                        <div style= {{position : 'relative' , left : -17, top:-17,height:30,width:30,borderRadius:30/2,backgroundColor:'black'}}className='Omok'></div>
+                        <div className='stone black'></div>
                     </div>)
             }
-            else if(dollWLocation.includes(i)){
+            else if(stoneWLocation.includes(i)){
                 boardSquare.push(
                     <div className='boardSquare'>
-                        <div style= {{position : 'relative' , left : -17, top:-17,height:30,width:30,borderRadius:30/2,backgroundColor:'white', objectFit: 'cover', border: '1px solid black'}}className='Omok'></div>
+                        <div className='stone white'></div>
                     </div>)
             }
             else{
                 boardSquare.push(
                     <div className='boardSquare'>
-                        <button style= {{position : 'relative' , left : -25, top:-12.5}} className='boardButton' onClick={() => onClickBoardButton(i)}></button>
+                        <button className='boardButton' onClick={() => onClickBoardButton(i)}></button>
                     </div>)
             }
         }
@@ -43,51 +42,17 @@ function Board(){
         return boardSquare
     }
 
-    function onClickResetButton(){
-        setDollBLocation(dollBLocation => [])
-        setDollWLocation(dollWLocation => [])
-        turnCount.current = 0
+    function checkGameEnd(){
+        
         return
     }
 
-    function makeResetButton(){
-        const resetButton = <button className='gameButton' onClick={()=>onClickResetButton()}>다시하기</button>
-
-        return resetButton
-    }
-
-    function onCLickUndoButton(){
-        if(turnCount.current>0){
-            if(turnCount.current%2 == 1){
-                setDollBLocation(dollBLocation.slice(0,dollBLocation.length-1))
-                turnCount.current = turnCount.current - 1
-            }
-            else{
-                setDollWLocation(dollWLocation.slice(0,dollWLocation.length-1))
-                turnCount.current = turnCount.current - 1
-            }
-        }
-        return 
-    }
-
-    function makeUndoButton(){
-        const undoButton = <button className='gameButton' onClick={()=>onCLickUndoButton()}>되돌리기</button>
-
-        return undoButton
-    }
-
     return (
-    <div className='wrap'>
         <div className='boardWrap'>
             {makeBoardSquare()}
         </div>
-        <div className='buttonWrap'>
-            {makeUndoButton()}
-            {makeResetButton()}
-        </div>
-    </div>
     )
 }
 
 
-export {Board}
+export default Board

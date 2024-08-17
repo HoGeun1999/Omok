@@ -20,6 +20,9 @@
     height: 20px;
     border: none;
     background-color:rgba(0,0,0,0);
+    position : relative; 
+    left : -25px;
+    top:-12.5px;
 }   
 
 .buttonWrap{
@@ -31,10 +34,21 @@
     margin-top: 30px;
 }
 
-.gameButton{
-    width: 100px;
-    height: 40px;
+
+.stone{
+    position : relative;
+    left : -17px;
+    top:-17px;
+    height:30px;
+    width:30px;
+    border-radius:50%;
+}
+
+.black{
+    background-color: black;
+}
+
+.white{
+    background-color: white;
     border: 1px solid black;
-    margin: 30px 10px 10px 10px;
-    align-items: center;
 }
