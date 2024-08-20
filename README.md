@@ -6,7 +6,10 @@ Homepage view
 -------------
 
  <p align="center"><img src = './image/homepageView.JPG' width="600" height="500"></p>
-이 홈페이지는 React를 이용하여 제작하였습니다.
+이 홈페이지는 React를 이용하여 제작하였습니다. 아래 주소를 통해 들어가면 직접 플레이하실 수 있습니다. (only PC)
+
+ https://hogeun1999.github.io/Omok/  
+ 
 <br>
 
 
