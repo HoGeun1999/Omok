@@ -1,5 +1,4 @@
 import './Board.css'
-import { useState } from 'react'
 
 function Board(props){ 
     const boardSquare = []

@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Board from './components/Board/Board';
 import { ResetButton, UndoButton } from './components/GameButton';
 import CheckGameEnd from './components/EndGame';
