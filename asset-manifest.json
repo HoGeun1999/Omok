@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Omok/static/css/main.bf9a2810.css",
+    "main.js": "/Omok/static/js/main.608da154.js",
+    "index.html": "/Omok/index.html",
+    "main.bf9a2810.css.map": "/Omok/static/css/main.bf9a2810.css.map",
+    "main.608da154.js.map": "/Omok/static/js/main.608da154.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf9a2810.css",
+    "static/js/main.608da154.js"
+  ]
+}
