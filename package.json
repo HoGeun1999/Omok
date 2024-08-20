@@ -2,19 +2,19 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hogeun1999.github.io/Omok/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^6.1.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "webpack --config webpack.config.prod.js",
-    "dev": "webpack-dev-server --open --config webpack.config.dev.js",
-    "homepage": "https://hogeun1999.github.io/Omok/"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +37,7 @@
   "devDependencies": {
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.1",
     "react": "^18.3.1",
