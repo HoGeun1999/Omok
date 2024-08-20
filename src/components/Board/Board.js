@@ -14,9 +14,10 @@ function Board(props){
             props.stoneWLocation[1](stoneWLocation => [...stoneWLocation,i])
         }
         props.turnCount[1](props.turnCount[0] + 1)
+
         return 
     }
- 
+    
     function makeBoardSquare(){      
         for(let i=0;i<100;i++){ 
             if(stoneBLocation.includes(i)){
@@ -34,18 +35,15 @@ function Board(props){
             else{
                 boardSquare.push(
                     <div className='boardSquare'>
-                        <button className='boardButton' onClick={() => onClickBoardButton(i)}></button>
+                        <button disabled = {props.buttonState[0]} className='boardButton' onClick={() => onClickBoardButton(i)}></button>
                     </div>)
             }
+
         }
 
         return boardSquare
     }
 
-    function checkGameEnd(){
-        
-        return
-    }
 
     return (
         <div className='boardWrap'>

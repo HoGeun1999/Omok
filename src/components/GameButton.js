@@ -5,11 +5,9 @@ const ResetButton = (props) => {
 }
 
 function onClickResetButton(props){
-    const stoneWLocation = props.stoneWLocation[0]
-    const stoneBLocation = props.stoneBLocation[0]
-
-    props.stoneBLocation[1]([stoneBLocation => []])
-    props.stoneWLocation[1](stoneWLocation => [])
+    props.buttonState[1](false)
+    props.stoneBLocation[1]([])
+    props.stoneWLocation[1]([])
     props.turnCount[1](0)
     return
 }
@@ -22,10 +20,8 @@ function onClickUndoButton(props){
     const stoneBLocation = props.stoneBLocation[0]
     const stoneWLocation = props.stoneWLocation[0]
 
-    console.log(stoneBLocation)
     if(props.turnCount[0]>0){
         if(props.turnCount[0]%2 === 1){
-            console.log(stoneBLocation)
             props.stoneBLocation[1](stoneBLocation.slice(0,stoneBLocation.length-1))
             props.turnCount[1](props.turnCount[0] - 1)
         }
@@ -34,6 +30,11 @@ function onClickUndoButton(props){
             props.turnCount[1](props.turnCount[0] - 1)
         }
     }
+
+    if(props.buttonState[0]){
+        props.buttonState[1](false)
+    }
+
     return 
 }
 
