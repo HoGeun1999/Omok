@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Omok/public/static/css/main.bf9a2810.css",
-    "main.js": "/Omok/public/static/js/main.608da154.js",
-    "index.html": "/Omok/public/index.html",
-    "main.bf9a2810.css.map": "/Omok/public/static/css/main.bf9a2810.css.map",
-    "main.608da154.js.map": "/Omok/public/static/js/main.608da154.js.map"
+    "main.css": "/Omok/static/css/main.bf9a2810.css",
+    "main.js": "/Omok/static/js/main.608da154.js",
+    "index.html": "/Omok/index.html",
+    "main.bf9a2810.css.map": "/Omok/static/css/main.bf9a2810.css.map",
+    "main.608da154.js.map": "/Omok/static/js/main.608da154.js.map"
   },
   "entrypoints": [
     "static/css/main.bf9a2810.css",
