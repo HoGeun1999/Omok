@@ -3,7 +3,7 @@ import './EndGame.css'
 function CheckGameEnd(props){
     const stoneBLocation = props.stoneBLocation[0]
     const stoneWLocation = props.stoneWLocation[0]
-    const numArr = [1,9,10,11]
+    const numArr = [1,18,19,20]
 
     for(let j=0;j<stoneBLocation.length;j++){
         for(let i=0;i<numArr.length;i++){
@@ -23,7 +23,7 @@ function CheckGameEnd(props){
     }
 
     function checkSimulater(stoneLocation, startNum,d){
-        let count = 1
+        let count = 1   
         for(let i=1;i<5;i++){
             if(stoneLocation.includes(startNum+d*i))
                 count = count + 1   

@@ -18,22 +18,28 @@ function Board(props){
     }
     
     function makeBoardSquare(){      
-        for(let i=0;i<100;i++){ 
+        for(let i=0;i<361;i++){ 
             if(stoneBLocation.includes(i)){
                 boardSquare.push(
-                    <div className='boardSquare'>
+                    <div className='boardSquare' key={i}>
                         <div className='stone black'></div>
                     </div>)
             }
             else if(stoneWLocation.includes(i)){
                 boardSquare.push(
-                    <div className='boardSquare'>
+                    <div className='boardSquare' key={i}>
                         <div className='stone white'></div>
+                    </div>)
+            }
+            else if(i<=18 || i%19===0){
+                boardSquare.push(
+                    <div className='boardSquare' key={i}>
+                        <button disabled = {true} className='boardButton' onClick={() => onClickBoardButton(i)}></button>
                     </div>)
             }
             else{
                 boardSquare.push(
-                    <div className='boardSquare'>
+                    <div className='boardSquare' key={i}>
                         <button disabled = {props.buttonState[0]} className='boardButton' onClick={() => onClickBoardButton(i)}></button>
                     </div>)
             }
